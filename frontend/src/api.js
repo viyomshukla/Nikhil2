@@ -1,10 +1,9 @@
-const API_BASE = 'http://localhost:3080/api'
+import axiosInstance from './axios'
 
 export const apiCall = async (endpoint) => {
   try {
-    const response = await fetch(`${API_BASE}${endpoint}`)
-    if (!response.ok) throw new Error('API request failed')
-    return await response.json()
+    const response = await axiosInstance.get(endpoint)
+    return response.data
   } catch (error) {
     console.error('API Error:', error)
     throw error

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const protectRoute = require('../middleware/protectRoute');
 const {
   getPopular,
   getTrending,
@@ -13,7 +14,7 @@ const {
 } = require('../controllers/movieController');
 
 // Collection routes (no :id) — must come BEFORE /:id
-router.get('/popular',   getPopular);
+router.get('/popular', protectRoute, getPopular);
 router.get('/trending',  getTrending);
 router.get('/search',    searchMovies);
 router.get('/genres',    getGenres);

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getMovieCredits } from '../api'
+import WishlistButton from './WishlistButton'
 
 export default function MovieModal({ movie, onClose }) {
   const [credits, setCredits] = useState(null)
@@ -50,7 +51,10 @@ export default function MovieModal({ movie, onClose }) {
           )}
 
           {/* Title and Rating */}
-          <h2 className="text-3xl font-bold mb-4">{movie.title || movie.name}</h2>
+          <div className="flex items-start justify-between gap-4 mb-4">
+            <h2 className="text-3xl font-bold">{movie.title || movie.name}</h2>
+            <WishlistButton movie={movie} className="shrink-0 text-xl" />
+          </div>
           <div className="bg-yellow-500 text-black px-3 py-1 rounded-lg inline-block font-bold mb-4">
             ⭐ {movie.vote_average || movie.voteAverage || 'N/A'}/10
           </div>
