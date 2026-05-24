@@ -4,57 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movie Platform</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>🎬 Movie Platform</h1>
-      <nav>
-        <button class="nav-btn active" data-section="popular">Popular</button>
-        <button class="nav-btn" data-section="trending">Trending</button>
-        <button class="nav-btn" data-section="genres">Genres</button>
-        <button class="nav-btn" data-section="search">Search</button>
-      </nav>
-    </header>
-
-    <!-- Search Section -->
-    <section id="search-section" class="section hidden">
-      <div class="search-box">
-        <input type="text" id="search-input" placeholder="Search for movies...">
-        <button id="search-btn">Search</button>
-      </div>
-      <div id="search-results" class="movies-grid"></div>
-    </section>
-
-    <!-- Genres Section -->
-    <section id="genres-section" class="section hidden">
-      <h2>Select a Genre</h2>
-      <div id="genres-list" class="genres-grid"></div>
-      <div id="genre-movies" class="movies-grid"></div>
-    </section>
-
-    <!-- Popular Section -->
-    <section id="popular-section" class="section">
-      <h2>Popular Movies</h2>
-      <div id="popular-movies" class="movies-grid"></div>
-    </section>
-
-    <!-- Trending Section -->
-    <section id="trending-section" class="section hidden">
-      <h2>Trending Movies</h2>
-      <div id="trending-movies" class="movies-grid"></div>
-    </section>
-  </div>
-
-  <!-- Movie Modal -->
-  <div id="movie-modal" class="modal hidden">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div id="modal-body"></div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
